@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="css/MyCSS3.css"></script>
+<script type="text/javascript" charset="utf-8">
+document.addEventListener("deviceready", onDeviceReady, false);
+var snum;
+var spwd;
+var sname;
+function OnDeviceReady(){
+	var uuid = document.getElementById("Regist_UUID");
+	var platform = document.getElementById("Regist_Platform");
+	platform = device.platform;
+	uuid = device.uuid;
+}
+
+function LoginOnClick(){
+	snum = document.getElementById("num");
+	spwd = document.getElementById("pwd");
+	sname = document.getElementById("name");
+	var xmlhttp;
+	//這下面的程式碼我其實不知道他幹嘛 那個GET APPLE你自己改一下
+	if(window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();
+	}
+	else{
+		new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	xmlhttp.onreadystatechange=function()
+	{
+		if(xmlhttp.readyState==4&&xmlhttp.status==200)
+		{
+			document.getElementById("test").innerHTML = xmlhttp.responseText;
+			var chk = document.getElementById("recall").innerHTML;
+			document.getElementById("apple").innerHTML = chk;
+			if(chk == 1){
+				ChangeUsnmToID(snum.value);
+			}
+			else{
+				document.getElementById("apple").innerHTML = chk;
+			}
+		}
+	}
+		
+	xmlhttp.open("GET","http://120.96.99.42/01360556/student/www/student-checklogin.php?snum="+snum.value+"&sname="+sname.value+"&spwd="+spwd.value,true);
+		
+	xmlhttp.send();
+	
+}
+
+function ChangeUsnmToID(usnm){	//http://120.96.99.42/01360556/student/www/student-change.php?student_num=wl01360556
+	var xmlhttp;
+	//這下面的程式碼我其實不知道他幹嘛 那個GET APPLE你自己改一下
+	if(window.XMLHttpRequest){
+		xmlhttp = new XMLHttpRequest();
+	}
+	else{
+		new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	xmlhttp.onreadystatechange=function()
+	{
+		if(xmlhttp.readyState==4&&xmlhttp.status==200)
+		{
+			document.getElementById("test").innerHTML = xmlhttp.responseText;
+			var sID = document.getElementById("recallID").innerHTML;
+			location.href = "http://120.96.99.42/01360556/student/www/ClassList_Student.php?student_id="+sID ;
+		}
+	}
+		
+	xmlhttp.open("GET","http://120.96.99.42/01360556/student/www/student-change.php?student_num="+usnm,true);
+		
+	xmlhttp.send();
+}
+</script>
+</head>
+
+<body>
+
+<div data-role="page" id="Login_Student">
+  <div data-role="header" data-theme="b">
+    <h1>IRS學生端系統登入</h1>
+  </div>
+  <div data-role="content">
+  <form>
+    <div data-role="fieldcontain">
+      <div>
+      <label for="textinput1">帳號輸入</label>
+      <input type="text" name="textinput1" id="num" value=""  required/>
+      </div>
+      
+      <div>
+      <label for="textinput2">姓名輸入</label>
+      <input type="text" name="textinput2" id="name" value="" required/>
+      </div>
+     
+      <div>
+      <label for="passwordinput">密碼輸入</label>
+      <input type="password" name="passwordinput" id="pwd" value="" required/>
+      </div> 
+      
+      <div>
+      <label for="textinput4">使用裝置</label>
+      <input type="text" name="textinput4" id="Regist_Platform" value="" readonly/>
+      </div>
+      
+      <div>
+      <label for="textinput5">ＵＵＩＤ</label>
+      <input type="text" name="textinput5" id="Regist_UUID" value="" readonly/>
+      <div>        
+        <button id="LoginButton" onClick="LoginOnClick();" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-left">學生登入</button>
+      </div>
+      <div>
+        <button id="RegistButton" onClick="location.href='http://120.96.99.42/01360556/student/www/Regist_Page.html';" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-left">帳號註冊</button>
+      </div>
+      </div>
+    </div>
+    
+  </form>
+  </div>
+  <div data-role="footer" id="apple" data-theme="b">
+    <h4><div id="test" style="display:none;"></div></h4>
+  </div>
+</div>
+</body>
+</html>

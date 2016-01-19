@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:course_id;datatype:int,name:course_teacher;datatype:int,name:course_teachername;datatype:string,name:course_school;datatype:string,name:course_semester;datatype:string,name:course_name;datatype:string,name:course_memo;datatype:blob,name:course_date;datatype:datetime,name:course_create;datatype:int,name:course_work;datatype:int" />
+	<infoitem key="UD_Recordset2" value="name:teacher_id;datatype:int,name:teacher_num;datatype:string,name:teacher_name;datatype:string,name:teacher_pwd;datatype:string,name:teacher_email;datatype:string" />
+	<infoitem key="UD_Recordset3" value="name:teacher_name;datatype:string,name:course_name;datatype:string,name:course_id;datatype:int" />
+</info>

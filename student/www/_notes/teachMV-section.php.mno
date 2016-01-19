@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:section_id;datatype:int,name:section_course;datatype:int,name:section_title;datatype:string,name:section_delete;datatype:int" />
+</info>

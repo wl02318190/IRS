@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:studentacc_id;datatype:int,name:studentacc_stdid;datatype:int,name:studentacc_time;datatype:string,name:studentacc_platform;datatype:string,name:studentacc_uuid;datatype:string" />
+</info>

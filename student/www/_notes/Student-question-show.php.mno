@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:question_id;datatype:int,name:question_course;datatype:int,name:question_section;datatype:int,name:question_number;datatype:int,name:question_title;datatype:string,name:question_select1;datatype:string,name:question_select2;datatype:string,name:question_select3;datatype:string,name:question_select4;datatype:string,name:question_answer;datatype:string,name:question_open;datatype:int" />
+	<infoitem key="UD_Recordset2" value="name:studentans_id;datatype:int,name:studentans_stdname;datatype:int,name:studentans_qid;datatype:int,name:studentans_ans;datatype:int,name:studentans_ROW;datatype:int" />
+</info>

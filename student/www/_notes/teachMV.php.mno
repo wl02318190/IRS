@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:teachMV_id;datatype:int,name:teachMV_course;datatype:string,name:teachMV_section;datatype:string,name:teachMV_url;datatype:string" />
+</info>
